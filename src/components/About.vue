@@ -147,7 +147,7 @@ import LazyImage from './LazyImage.vue';
 
 <style scoped>
 .about {
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--section-padding) 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
 }
@@ -155,6 +155,7 @@ import LazyImage from './LazyImage.vue';
 .about-container {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 .about-header {
@@ -422,24 +423,35 @@ import LazyImage from './LazyImage.vue';
 /* Responsive Design */
 @media (max-width: 768px) {
   .about {
-    padding: var(--spacing-lg) var(--spacing-sm);
+    padding: var(--spacing-xl) 0;
   }
 
   .about-title {
-    font-size: 2rem;
+    font-size: var(--font-size-2xl);
+  }
+
+  .about-subtitle {
+    font-size: var(--font-size-base);
   }
 
   .experience-section {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .credentials-section {
+    padding: var(--spacing-lg);
   }
 
   .credentials-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
   .trust-section {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
   }
 
   .trust-image {
@@ -454,30 +466,55 @@ import LazyImage from './LazyImage.vue';
   .experience-card {
     flex-direction: column;
     text-align: center;
+    padding: var(--spacing-md);
   }
 
   .trust-point {
-    flex-direction: column;
     text-align: center;
     gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .trust-point i {
+    align-self: center;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .about-title {
-    font-size: 1.8rem;
+    font-size: var(--font-size-xl);
+  }
+
+  .about-subtitle {
+    font-size: var(--font-size-sm);
   }
 
   .credentials-title {
-    font-size: 1.6rem;
+    font-size: var(--font-size-lg);
   }
 
   .trust-title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
   }
 
   .experience-number {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xl);
+  }
+
+  .experience-card {
+    padding: var(--spacing-sm);
+  }
+
+  .credentials-section {
+    padding: var(--spacing-md);
+  }
+
+  .trust-section {
+    padding: var(--spacing-md);
+  }
+
+  .credential-content {
+    padding: var(--spacing-md);
   }
 }
 </style>

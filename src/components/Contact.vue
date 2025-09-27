@@ -406,7 +406,7 @@ const handleSubmit = async () => {
 
 <style scoped>
 .contact {
-  padding: var(--spacing-xl) 0;
+  padding: var(--section-padding) 0;
   background-color: var(--color-light-gray);
 }
 
@@ -702,11 +702,23 @@ const handleSubmit = async () => {
 /* Mobile Optimization */
 @media (max-width: 767px) {
   .contact {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .contact-header {
+    padding: 0 var(--spacing-sm);
   }
   
   .contact-header h2 {
     font-size: var(--font-size-2xl);
+  }
+  
+  .contact-header p {
+    font-size: var(--font-size-base);
+  }
+  
+  .contact-content {
+    gap: var(--spacing-xl);
   }
   
   .contact-form-container {
@@ -715,16 +727,53 @@ const handleSubmit = async () => {
   
   .info-item {
     padding: var(--spacing-md);
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: var(--spacing-sm);
   }
   
   .info-icon {
     width: 40px;
     height: 40px;
+    align-self: center;
+  }
+  
+  .location-header {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    text-align: center;
+  }
+  
+  .location-actions {
+    align-items: center;
   }
   
   .submit-btn {
     padding: var(--spacing-md);
     font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 479px) {
+  .contact-header h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .contact-header p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .contact-form-container {
+    padding: var(--spacing-md);
+  }
+  
+  .info-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .location-item {
+    padding: var(--spacing-md);
   }
 }
 

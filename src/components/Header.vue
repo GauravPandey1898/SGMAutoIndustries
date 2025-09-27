@@ -4,9 +4,20 @@
       <!-- Logo and Branding Section -->
       <div class="header-brand">
         <div class="logo-section">
-          <h1 class="business-name">{{ businessData.businessName }}</h1>
-          <div class="authorization-badge" v-if="businessData.authorizedDealer">
-            <span class="badge-text">Authorized TVS Dealer</span>
+          <div class="tvs-logo">
+            <LazyImage
+              src="/static/TVS_Motor_Company-Logo.wine.svg"
+              alt="TVS Motor Company Logo"
+              fallback-src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA4MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHR0ZXh0IHg9IjQwIiB5PSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VFZTPC90ZXh0Pgo8L3N2Zz4K"
+              image-class="tvs-logo-image"
+              loading="eager"
+            />
+          </div>
+          <div class="business-info">
+            <h1 class="business-name">{{ businessData.businessName }}</h1>
+            <div class="authorization-badge" v-if="businessData.authorizedDealer">
+              <span class="badge-text">Authorized TVS Dealer</span>
+            </div>
           </div>
         </div>
         <div class="service-cities">
@@ -30,7 +41,7 @@
       <div class="header-actions">
         <!-- Phone Number with Click-to-Call -->
         <a :href="`tel:${businessData.phone}`" class="phone-link">
-          <span class="phone-icon">📞</span>
+          <img src="/static/phone-call.png" alt="Phone" class="phone-icon" />
           <span class="phone-number">{{ businessData.formatPhoneNumber() }}</span>
         </a>
 
@@ -64,6 +75,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { businessData } from '../data/index.js';
+import LazyImage from './LazyImage.vue';
 
 // Reactive state
 const isMobileMenuOpen = ref(false);
@@ -117,7 +129,7 @@ onUnmounted(() => {
 
 <style scoped>
 .header {
-  background: rgba(40, 113, 184, 0.8);
+  background: var(--color-black);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -147,8 +159,36 @@ onUnmounted(() => {
 .logo-section {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
   margin-bottom: var(--spacing-xs);
+}
+
+.tvs-logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tvs-logo-image {
+  width: 80px !important;
+  height: 40px !important;
+  max-width: 80px;
+  max-height: 40px;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: normal;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.business-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 .business-name {
@@ -160,7 +200,7 @@ onUnmounted(() => {
 }
 
 .authorization-badge {
-  background-color: var(--color-black);
+  background-color: #d91010;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-xs);
@@ -248,7 +288,10 @@ onUnmounted(() => {
 }
 
 .phone-icon {
-  font-size: var(--font-size-lg);
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes the icon white */
 }
 
 .phone-number {
@@ -442,6 +485,28 @@ onUnmounted(() => {
   
   .phone-number {
     font-size: var(--font-size-xs);
+  }
+  
+  .tvs-logo {
+    width: 60px;
+    height: 32px;
+  }
+  
+  .tvs-logo-image {
+    width: 60px !important;
+    height: 32px !important;
+    max-width: 60px;
+    max-height: 32px;
+  }
+  
+  .logo-section {
+    gap: var(--spacing-sm);
+  }
+  
+  .business-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
   }
 }
 

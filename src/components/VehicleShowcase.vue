@@ -195,7 +195,7 @@ const handleContactInquiry = (vehicle) => {
 
 <style scoped>
 .vehicle-showcase {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--section-padding) 0;
   background: linear-gradient(135deg, var(--color-light-gray) 0%, var(--color-white) 100%);
 }
 
@@ -350,7 +350,7 @@ const handleContactInquiry = (vehicle) => {
   padding: var(--spacing-md);
   background: var(--color-light-gray);
   border-radius: var(--border-radius-md);
-  text-align: center;
+  text-align: left;
 }
 
 .spec-label {
@@ -406,7 +406,7 @@ const handleContactInquiry = (vehicle) => {
 }
 
 .pricing {
-  text-align: center;
+  text-align: left;
 }
 
 .price-label {
@@ -473,11 +473,25 @@ const handleContactInquiry = (vehicle) => {
 /* Mobile-first Responsive Design */
 @media (max-width: 767px) {
   .vehicle-showcase {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .section-header {
+    padding: 0 var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .section-subtitle {
+    font-size: var(--font-size-base);
   }
   
   .vehicle-content {
     padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
   }
   
   .main-image {
@@ -492,6 +506,10 @@ const handleContactInquiry = (vehicle) => {
   .thumbnail-btn {
     width: 50px;
     height: 50px;
+  }
+  
+  .vehicle-header {
+    text-align: center;
   }
   
   .vehicle-name {
@@ -519,6 +537,7 @@ const handleContactInquiry = (vehicle) => {
   .feature-item {
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: var(--font-size-sm);
+    justify-content: left;
   }
   
   .action-buttons {
@@ -530,9 +549,25 @@ const handleContactInquiry = (vehicle) => {
     width: 100%;
     padding: var(--spacing-sm) var(--spacing-md);
   }
+  
+  .vehicle-actions {
+    text-align: center;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 479px) {
+  .section-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .section-subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .vehicle-content {
+    padding: var(--spacing-md);
+  }
+  
   .main-image {
     height: 200px;
   }

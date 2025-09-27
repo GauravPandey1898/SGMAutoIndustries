@@ -7,10 +7,17 @@
    MOBILE-FIRST RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
+/* Base Mobile Styles (320px and up) */
+:root {
+  --container-padding: var(--spacing-md);
+  --section-padding: var(--spacing-xl);
+}
+
 /* Extra Small Devices (phones, 320px and up) */
-@media (min-width: 320px) {
+@media (max-width: 479px) {
   :root {
     --container-padding: var(--spacing-sm);
+    --section-padding: var(--spacing-lg);
   }
   
   /* Ensure minimum touch target sizes */
@@ -27,6 +34,15 @@
   body {
     font-size: 14px;
     line-height: 1.4;
+  }
+  
+  /* Consistent container padding */
+  .container,
+  .about-container,
+  .contact-container,
+  .footer-container {
+    padding-left: var(--spacing-sm) !important;
+    padding-right: var(--spacing-sm) !important;
   }
 }
 
@@ -377,9 +393,9 @@
   
   .info-item {
     padding: var(--spacing-md);
-    flex-direction: column;
-    text-align: center;
-    gap: var(--spacing-sm);
+    flex-direction: row;
+    text-align: left;
+    gap: var(--spacing-md);
   }
   
   .info-icon {

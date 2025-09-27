@@ -349,9 +349,14 @@ onMounted(() => {
     background-attachment: scroll; /* Better performance on mobile */
     background-size: cover;
   }
+  
   .hero {
     min-height: 85vh;
     padding: var(--spacing-lg) 0;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
   }
   
   .hero-content {
@@ -363,11 +368,13 @@ onMounted(() => {
   .hero-title {
     font-size: var(--font-size-2xl);
     margin-bottom: var(--spacing-md);
+    text-align: center;
   }
   
   .hero-subtitle {
     font-size: var(--font-size-sm);
     margin-bottom: var(--spacing-lg);
+    text-align: center;
   }
   
   .hero-features {
@@ -379,6 +386,7 @@ onMounted(() => {
   
   .feature-item {
     font-size: var(--font-size-sm);
+    justify-content: center;
   }
   
   .hero-actions {
@@ -400,9 +408,14 @@ onMounted(() => {
 }
 
 /* Extra small screens */
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .hero {
     min-height: 80vh;
+  }
+  
+  .hero-content {
+    padding: var(--spacing-md);
+    margin: 0 var(--spacing-xs);
   }
   
   .hero-title {

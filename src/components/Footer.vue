@@ -43,23 +43,23 @@
         </div>
 
         <!-- Social Media Section -->
-        <div class="footer-section social-media">
+        <!-- <div class="footer-section social-media">
           <h4 class="section-title">Follow Us</h4>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">
+          <div class="social-icons">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="footer-link social">
               <i class="icon-facebook"></i>
             </a>
-            <a href="#" class="social-link" aria-label="Instagram">
-              <i class="icon-instagram"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="footer-link social">
               <i class="icon-twitter"></i>
             </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="footer-link social">
+              <i class="icon-instagram"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="footer-link social">
               <i class="icon-linkedin"></i>
             </a>
           </div>
-        </div>
+        </div>  -->
       </div>
     </div>
     

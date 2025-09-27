@@ -48,18 +48,27 @@ const services = serviceData;
 
 <style scoped>
 .services {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--section-padding) 0;
   background-color: var(--color-light-gray);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 .services-header {
   text-align: center;
   margin-bottom: var(--spacing-2xl);
+  padding: 0 var(--spacing-sm);
 }
 
 .services-title {
   color: var(--color-black);
   margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
 }
 
 .services-subtitle {
@@ -67,14 +76,13 @@ const services = serviceData;
   font-size: var(--font-size-lg);
   max-width: 600px;
   margin: 0 auto;
+  line-height: var(--line-height-relaxed);
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
-  max-width: var(--max-width);
-  margin: 0 auto;
 }
 
 .service-card {
@@ -106,7 +114,7 @@ const services = serviceData;
 }
 
 .service-content {
-  text-align: left;
+  text-align: center;
 }
 
 .service-name {
@@ -176,14 +184,68 @@ const services = serviceData;
   }
 }
 
-/* Touch-friendly interactions for mobile */
+/* Mobile Responsive Design */
 @media (max-width: 767px) {
+  .services {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .services-header {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .services-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .services-subtitle {
+    font-size: var(--font-size-base);
+  }
+  
   .service-card {
     padding: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .service-content {
+    text-align: center;
+  }
+  
+  .highlight-item {
+    justify-content: center;
+    text-align: center;
   }
   
   .service-card:active {
     transform: scale(0.98);
+  }
+}
+
+@media (max-width: 479px) {
+  .services-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .services-subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .service-card {
+    padding: var(--spacing-md);
+  }
+  
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    font-size: var(--font-size-xl);
+  }
+  
+  .service-name {
+    font-size: var(--font-size-lg);
+  }
+  
+  .service-description {
+    font-size: var(--font-size-sm);
   }
 }
 
