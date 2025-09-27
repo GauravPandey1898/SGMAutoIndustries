@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Enhanced Mobile Optimization Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SGM Auto Industries">
+    <meta name="theme-color" content="#d32f2f">
+    <meta name="msapplication-TileColor" content="#d32f2f">
+    <meta name="format-detection" content="telephone=yes">
+    
+    <!-- SEO and Social Meta Tags -->
+    <title>Shri Gajanan Maharaj TVS Auto - Authorized TVS Dealer | Lucknow & Hardoi</title>
+    <meta name="description" content="Shri Gajanan Maharaj TVS Auto - Authorized TVS three-wheeler dealer in Lucknow and Hardoi. Sales, service, and genuine parts for TVS King EV Max and other models.">
+    <meta name="keywords" content="TVS dealer, three wheeler, Lucknow, Hardoi, TVS King EV Max, auto rickshaw, commercial vehicle, Shri Gajanan Maharaj">
+    <meta name="author" content="Shri Gajanan Maharaj TVS Auto">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shri Gajanan Maharaj TVS Auto - Authorized TVS Dealer">
+    <meta property="og:description" content="Authorized TVS three-wheeler dealer in Lucknow and Hardoi. Sales, service, and genuine parts.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/king-ev-max-hero-banner/Mushkil-raaste-banner-web.webp">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shri Gajanan Maharaj TVS Auto - Authorized TVS Dealer">
+    <meta name="twitter:description" content="Authorized TVS three-wheeler dealer in Lucknow and Hardoi. Sales, service, and genuine parts.">
+    <meta name="twitter:image" content="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/king-ev-max-hero-banner/Mushkil-raaste-banner-web.webp">
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.tvsmotor.com">
+    <link rel="dns-prefetch" href="https://www.tvsmotor.com">
+    
+    <!-- Preload critical hero background image -->
+    <link rel="preload" href="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/king-ev-max-hero-banner/Mushkil-raaste-banner-web.webp" as="image" type="image/webp">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+      body { visibility: hidden; opacity: 0; }
+      body.loaded { visibility: visible; opacity: 1; transition: opacity 0.3s ease-in-out; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    
+    <!-- Mobile Optimization and FOUC Prevention Script -->
+    <script>
+      // Prevent FOUC
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+      });
+      
+      // Mobile optimization
+      (function() {
+        // Disable zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+          const now = (new Date()).getTime();
+          if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+          }
+          lastTouchEnd = now;
+        }, false);
+        
+        // Optimize viewport for different devices
+        function setViewport() {
+          const viewport = document.querySelector('meta[name="viewport"]');
+          if (viewport) {
+            // Adjust viewport for different screen sizes
+            const screenWidth = window.screen.width;
+            if (screenWidth < 768) {
+              viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
+            }
+          }
+        }
+        
+        // Set viewport on load and orientation change
+        setViewport();
+        window.addEventListener('orientationchange', function() {
+          setTimeout(setViewport, 100);
+        });
+        
+        // Improve touch scrolling performance
+        if ('ontouchstart' in window) {
+          document.body.style.webkitOverflowScrolling = 'touch';
+          document.body.style.touchAction = 'manipulation';
+        }
+      })();
+    </script>
+  </body>
+</html>
