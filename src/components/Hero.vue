@@ -3,24 +3,24 @@
     <div class="hero-background" :class="{ 'image-loaded': imageLoaded, 'image-error': imageError }">
       <div class="hero-overlay"></div>
     </div>
-    
+
     <div class="container">
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-text">Authorized TVS Dealer</span>
         </div>
-        
+
         <h1 class="hero-title">
           <span class="highlight">{{ businessData.businessName }}</span><br>
           Your Trusted TVS 3Wheeler Partner
         </h1>
-        
+
         <p class="hero-subtitle">
-          {{ businessData.yearsOfExperience }}+ years of excellence serving 
-          <strong>{{ businessData.serviceCities.join(', ') }}</strong> with genuine TVS vehicles, 
+          {{ businessData.yearsOfExperience }}+ years of excellence serving
+          <strong>{{ businessData.serviceCities.join(', ') }}</strong> with genuine TVS vehicles,
           professional service, and unmatched customer satisfaction.
         </p>
-        
+
         <div class="hero-features">
           <div class="feature-item">
             <span class="feature-icon">✓</span>
@@ -35,31 +35,22 @@
             <span>Expert Service</span>
           </div>
         </div>
-        
+
         <div class="hero-actions">
-          <button 
-            class="btn btn-primary" 
-            @click="scrollToSection('contact')"
-            aria-label="Contact us for inquiries"
-          >
+          <button class="btn btn-primary" @click="scrollToSection('contact')" aria-label="Contact us for inquiries">
             Contact Us
           </button>
-          <button 
-            class="btn btn-secondary" 
-            @click="scrollToSection('vehicles')"
-            aria-label="View our vehicle collection"
-          >
+          <button class="btn btn-secondary" @click="scrollToSection('vehicles')"
+            aria-label="View our vehicle collection">
             View Vehicles
           </button>
         </div>
-        
+
         <div class="hero-contact">
-          <a 
-            :href="`tel:${businessData.phone}`" 
-            class="contact-link"
-            aria-label="Call us directly"
-          >
-            <span class="contact-icon">📞</span>
+          <a :href="`tel:${businessData.phone}`" class="contact-link" aria-label="Call us directly">
+            <span class="contact-icon">
+              <img src="/static/phone-call.png" alt="Phone" class="phone-icon" />
+            </span>
             <span class="contact-text">{{ businessData.formatPhoneNumber() }}</span>
           </a>
         </div>
@@ -87,7 +78,7 @@ const imageError = ref(false);
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ 
+    element.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
@@ -314,6 +305,17 @@ onMounted(() => {
 
 .contact-icon {
   font-size: var(--font-size-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  /* Makes the icon white */
 }
 
 /* Animations */
@@ -322,6 +324,7 @@ onMounted(() => {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -338,7 +341,7 @@ onMounted(() => {
 }
 
 .hero-background.image-error {
-  background-image: 
+  background-image:
     linear-gradient(135deg, rgba(220, 38, 127, 0.8) 0%, rgba(33, 150, 243, 0.7) 100%),
     url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&crop=center');
 }
@@ -346,64 +349,70 @@ onMounted(() => {
 /* Mobile Responsive Design */
 @media (max-width: 767px) {
   .hero-background {
-    background-attachment: scroll; /* Better performance on mobile */
+    background-attachment: scroll;
+    /* Better performance on mobile */
     background-size: cover;
   }
-  
+
   .hero {
     min-height: 85vh;
     padding: var(--spacing-lg) 0;
   }
-  
+
   .container {
     padding: 0 var(--spacing-sm);
   }
-  
+
   .hero-content {
     padding: var(--spacing-lg);
     margin: 0 var(--spacing-sm);
     max-width: calc(100% - var(--spacing-lg));
   }
-  
+
   .hero-title {
     font-size: var(--font-size-2xl);
     margin-bottom: var(--spacing-md);
     text-align: center;
   }
-  
+
   .hero-subtitle {
     font-size: var(--font-size-sm);
     margin-bottom: var(--spacing-lg);
     text-align: center;
   }
-  
+
   .hero-features {
     flex-direction: column;
     gap: var(--spacing-sm);
     align-items: center;
     margin-bottom: var(--spacing-lg);
   }
-  
+
   .feature-item {
     font-size: var(--font-size-sm);
     justify-content: center;
   }
-  
+
   .hero-actions {
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-sm);
   }
-  
+
   .btn {
     width: 100%;
     max-width: 280px;
     font-size: var(--font-size-base);
   }
-  
+
   .contact-link {
     font-size: var(--font-size-base);
     margin-top: var(--spacing-sm);
+  }
+
+  .phone-icon {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -412,34 +421,39 @@ onMounted(() => {
   .hero {
     min-height: 80vh;
   }
-  
+
   .hero-content {
     padding: var(--spacing-md);
     margin: 0 var(--spacing-xs);
   }
-  
+
   .hero-title {
     font-size: var(--font-size-xl);
     line-height: 1.2;
   }
-  
+
   .hero-subtitle {
     font-size: var(--font-size-xs);
   }
-  
+
   .badge-text {
     font-size: var(--font-size-xs);
     padding: var(--spacing-xs) var(--spacing-sm);
   }
-  
+
   .btn {
     padding: var(--spacing-sm) var(--spacing-lg);
     font-size: var(--font-size-sm);
     min-height: 44px;
   }
-  
+
   .contact-link {
     font-size: var(--font-size-sm);
+  }
+
+  .phone-icon {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -448,7 +462,7 @@ onMounted(() => {
   .hero-title {
     font-size: var(--font-size-4xl);
   }
-  
+
   .hero-features {
     gap: var(--spacing-xl);
   }
@@ -459,14 +473,15 @@ onMounted(() => {
   .hero-content {
     max-width: 900px;
   }
-  
+
   .hero-title {
     font-size: 3.5rem;
   }
 }
 
 /* High DPI Display Optimizations */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .hero-background {
     background-size: cover;
   }
@@ -477,14 +492,14 @@ onMounted(() => {
   .hero-content * {
     animation: none !important;
   }
-  
+
   .btn:hover,
   .btn:focus,
   .contact-link:hover,
   .contact-link:focus {
     transform: none;
   }
-  
+
   html {
     scroll-behavior: auto;
   }

@@ -10,36 +10,30 @@
         <!-- Contact Information -->
         <div class="contact-info">
           <h3>Get In Touch</h3>
-          
+
           <!-- Locations -->
           <div v-for="(location, index) in businessData.getAllLocations()" :key="index" class="location-item">
             <div class="location-header">
               <h4>{{ location.name }}</h4>
               <span class="location-type">{{ location.type }}</span>
             </div>
-            
+
             <div class="info-item">
               <div class="info-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    fill="currentColor" />
                 </svg>
               </div>
               <div class="info-content">
                 <p>{{ location.address }}</p>
                 <div class="location-actions">
-                  <a 
-                    v-if="location.googleMapsUrl" 
-                    :href="location.googleMapsUrl" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="maps-link"
-                  >
+                  <a v-if="location.googleMapsUrl" :href="location.googleMapsUrl" target="_blank"
+                    rel="noopener noreferrer" class="maps-link">
                     View on Google Maps
                   </a>
-                  <a 
-                    :href="`tel:${location.phone || businessData.phone}`" 
-                    class="contact-link phone-link"
-                  >
+                  <a :href="`tel:${location.phone || businessData.phone}`" class="contact-link phone-link">
                     {{ businessData.formatPhoneNumber(location.phone || businessData.phone) }}
                   </a>
                 </div>
@@ -55,7 +49,9 @@
           <div v-if="businessData.getAllLocations().length === 0" class="info-item">
             <div class="info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  fill="currentColor" />
               </svg>
             </div>
             <div class="info-content">
@@ -64,12 +60,13 @@
               <p class="service-cities">Serving: {{ businessData.serviceCities.join(', ') }}</p>
             </div>
           </div>
-          
+
           <!-- Service Areas -->
           <div class="info-item">
             <div class="info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  fill="currentColor" />
               </svg>
             </div>
             <div class="info-content">
@@ -82,7 +79,9 @@
           <div class="info-item">
             <div class="info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                  fill="currentColor" />
               </svg>
             </div>
             <div class="info-content">
@@ -97,8 +96,10 @@
           <div class="info-item">
             <div class="info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
-                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                  fill="currentColor" />
+                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor" />
               </svg>
             </div>
             <div class="info-content">
@@ -112,61 +113,43 @@
         <!-- Contact Form -->
         <div class="contact-form-container">
           <h3>Send us a Message</h3>
-          <form @submit.prevent="handleSubmit" class="contact-form" novalidate>
+          <form @submit.prevent="handleSubmit" class="contact-form" name="sgm-auto-contact" method="POST"
+            data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+            <!-- Netlify Forms requires this hidden input -->
+            <input type="hidden" name="form-name" value="sgm-auto-contact">
+
+            <!-- Honeypot field for spam protection -->
+            <div style="display: none;">
+              <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            </div>
             <div class="form-group">
               <label for="name">Full Name *</label>
-              <input
-                type="text"
-                id="name"
-                v-model="form.name"
-                :class="{ 'error': errors.name }"
-                @blur="validateField('name')"
-                @input="clearError('name'); debouncedValidation('name')"
-                placeholder="Enter your full name"
-                required
-              >
+              <input type="text" id="name" name="name" v-model="form.name" :class="{ 'error': errors.name }"
+                @blur="validateField('name')" @input="clearError('name'); debouncedValidation('name')"
+                placeholder="Enter your full name" required>
               <span v-if="errors.name" class="error-message">{{ errors.name }}</span>
             </div>
 
             <div class="form-group">
               <label for="phone">Phone Number *</label>
-              <input
-                type="tel"
-                id="phone"
-                v-model="form.phone"
-                :class="{ 'error': errors.phone }"
-                @blur="validateField('phone')"
-                @input="clearError('phone'); debouncedValidation('phone')"
-                placeholder="Enter your phone number"
-                required
-              >
+              <input type="tel" id="phone" name="phone" v-model="form.phone" :class="{ 'error': errors.phone }"
+                @blur="validateField('phone')" @input="clearError('phone'); debouncedValidation('phone')"
+                placeholder="Enter your phone number" required>
               <span v-if="errors.phone" class="error-message">{{ errors.phone }}</span>
             </div>
 
             <div class="form-group">
               <label for="email">Email Address *</label>
-              <input
-                type="email"
-                id="email"
-                v-model="form.email"
-                :class="{ 'error': errors.email }"
-                @blur="validateField('email')"
-                @input="clearError('email'); debouncedValidation('email')"
-                placeholder="Enter your email address"
-                required
-              >
+              <input type="email" id="email" name="email" v-model="form.email" :class="{ 'error': errors.email }"
+                @blur="validateField('email')" @input="clearError('email'); debouncedValidation('email')"
+                placeholder="Enter your email address" required>
               <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
             </div>
 
             <div class="form-group">
               <label for="subject">Subject *</label>
-              <select
-                id="subject"
-                v-model="form.subject"
-                :class="{ 'error': errors.subject }"
-                @change="clearError('subject')"
-                required
-              >
+              <select id="subject" name="subject" v-model="form.subject" :class="{ 'error': errors.subject }"
+                @change="clearError('subject')" required>
                 <option value="">Select a subject</option>
                 <option value="vehicle-inquiry">Vehicle Inquiry</option>
                 <option value="service-appointment">Service Appointment</option>
@@ -179,32 +162,16 @@
 
             <div class="form-group">
               <label for="message">Message *</label>
-              <textarea
-                id="message"
-                v-model="form.message"
-                :class="{ 'error': errors.message }"
-                @blur="validateField('message')"
-                @input="clearError('message'); debouncedValidation('message')"
-                placeholder="Tell us how we can help you..."
-                rows="5"
-                required
-              ></textarea>
+              <textarea id="message" name="message" v-model="form.message" :class="{ 'error': errors.message }"
+                @blur="validateField('message')" @input="clearError('message'); debouncedValidation('message')"
+                placeholder="Tell us how we can help you..." rows="5" required></textarea>
               <span v-if="errors.message" class="error-message">{{ errors.message }}</span>
             </div>
 
-            <button
-              type="submit"
-              class="submit-btn"
-              :disabled="isSubmitting || !isFormValid"
-              :class="{ 'submitting': isSubmitting }"
-            >
-              <LoadingState
-                v-if="isSubmitting"
-                message="Sending..."
-                variant="minimal"
-                size="small"
-                :show-spinner="true"
-              />
+            <button type="submit" class="submit-btn" :disabled="isSubmitting || !isFormValid"
+              :class="{ 'submitting': isSubmitting }">
+              <LoadingState v-if="isSubmitting" message="Sending..." variant="minimal" size="small"
+                :show-spinner="true" />
               <span v-else>Send Message</span>
             </button>
 
@@ -251,12 +218,12 @@ const maxSubmitAttempts = 3;
 
 // Form validation state
 const isFormValid = computed(() => {
-  return form.name.trim() && 
-         form.phone.trim() && 
-         form.email.trim() && 
-         form.subject && 
-         form.message.trim() &&
-         !Object.values(errors).some(error => error !== '')
+  return form.name.trim() &&
+    form.phone.trim() &&
+    form.email.trim() &&
+    form.subject &&
+    form.message.trim() &&
+    !Object.values(errors).some(error => error !== '')
 });
 
 // Validation functions
@@ -343,7 +310,7 @@ const resetForm = () => {
   });
 };
 
-const handleSubmit = async () => {
+const handleSubmit = async (event) => {
   if (!validateForm()) {
     submitMessage.value = 'Please correct the errors above';
     submitStatus.value = 'error';
@@ -361,31 +328,39 @@ const handleSubmit = async () => {
   submitAttempts.value++;
 
   try {
-    // Simulate form submission with potential network issues
-    await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Simulate occasional network failures for testing
-        if (Math.random() > 0.8 && submitAttempts.value < 2) {
-          reject(new Error('Network error'));
-        } else {
-          resolve();
-        }
-      }, 2000);
+    // Prepare form data for Netlify
+    const formData = new FormData();
+    formData.append('form-name', 'sgm-auto-contact');
+    formData.append('name', form.name);
+    formData.append('phone', form.phone);
+    formData.append('email', form.email);
+    formData.append('subject', form.subject);
+    formData.append('message', form.message);
+
+    // Submit to Netlify
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
     });
-    
-    // Success
-    submitMessage.value = 'Thank you for your message! We will get back to you soon.';
-    submitStatus.value = 'success';
-    submitAttempts.value = 0; // Reset attempts on success
-    resetForm();
+
+    if (response.ok) {
+      // Success
+      submitMessage.value = 'Thank you for your message! We will get back to you soon.';
+      submitStatus.value = 'success';
+      submitAttempts.value = 0; // Reset attempts on success
+      resetForm();
+    } else {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
   } catch (error) {
     // Error handling with retry logic
     console.error('Form submission error:', error);
-    
+
     if (submitAttempts.value < maxSubmitAttempts) {
       submitMessage.value = `Submission failed. Retrying... (Attempt ${submitAttempts.value}/${maxSubmitAttempts})`;
       submitStatus.value = 'error';
-      
+
       // Auto-retry after a delay
       setTimeout(() => {
         if (submitAttempts.value < maxSubmitAttempts) {
@@ -393,7 +368,7 @@ const handleSubmit = async () => {
         }
       }, 2000);
     } else {
-      submitMessage.value = 'Sorry, there was an error sending your message. Please try again later.';
+      submitMessage.value = 'Sorry, there was an error sending your message. Please try calling us directly.';
       submitStatus.value = 'error';
     }
   } finally {
@@ -687,7 +662,7 @@ const handleSubmit = async () => {
     grid-template-columns: 1fr 1fr;
     align-items: start;
   }
-  
+
   .info-item {
     margin-bottom: var(--spacing-xl);
   }
@@ -704,27 +679,27 @@ const handleSubmit = async () => {
   .contact {
     padding: var(--spacing-xl) 0;
   }
-  
+
   .contact-header {
     padding: 0 var(--spacing-sm);
   }
-  
+
   .contact-header h2 {
     font-size: var(--font-size-2xl);
   }
-  
+
   .contact-header p {
     font-size: var(--font-size-base);
   }
-  
+
   .contact-content {
     gap: var(--spacing-xl);
   }
-  
+
   .contact-form-container {
     padding: var(--spacing-lg);
   }
-  
+
   .info-item {
     padding: var(--spacing-md);
     flex-direction: column;
@@ -732,23 +707,23 @@ const handleSubmit = async () => {
     align-items: center;
     gap: var(--spacing-sm);
   }
-  
+
   .info-icon {
     width: 40px;
     height: 40px;
     align-self: center;
   }
-  
+
   .location-header {
     flex-direction: column;
     gap: var(--spacing-xs);
     text-align: center;
   }
-  
+
   .location-actions {
     align-items: center;
   }
-  
+
   .submit-btn {
     padding: var(--spacing-md);
     font-size: var(--font-size-base);
@@ -759,19 +734,19 @@ const handleSubmit = async () => {
   .contact-header h2 {
     font-size: var(--font-size-xl);
   }
-  
+
   .contact-header p {
     font-size: var(--font-size-sm);
   }
-  
+
   .contact-form-container {
     padding: var(--spacing-md);
   }
-  
+
   .info-item {
     padding: var(--spacing-sm);
   }
-  
+
   .location-item {
     padding: var(--spacing-md);
   }
@@ -783,17 +758,18 @@ const handleSubmit = async () => {
     padding: var(--spacing-sm);
     margin: calc(-1 * var(--spacing-sm));
   }
-  
+
   .submit-btn {
     min-height: 48px;
     padding: var(--spacing-md) var(--spacing-lg);
   }
-  
+
   .form-group input,
   .form-group select,
   .form-group textarea {
     min-height: 44px;
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px;
+    /* Prevents zoom on iOS */
   }
 }
 </style>
