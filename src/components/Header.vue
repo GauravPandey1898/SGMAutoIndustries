@@ -15,9 +15,9 @@
           </div>
           <div class="business-info">
             <h1 class="business-name">{{ businessData.businessName }}</h1>
-            <div class="authorization-badge" v-if="businessData.authorizedDealer">
+            <!-- <div class="authorization-badge" v-if="businessData.authorizedDealer">
               <span class="badge-text">Authorized TVS Dealer</span>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="service-cities">
